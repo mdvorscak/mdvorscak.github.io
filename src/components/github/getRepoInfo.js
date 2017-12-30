@@ -1,7 +1,8 @@
-import gh from './gitHubApiWrapper';
+import MemoizedGitHubUserWrapper from './MemoizedGitHubUserWrapper';
 
 async function getRepoInfo(userId) {
-  const response = await gh.getUser(userId).listRepos();
+  const ghUser = MemoizedGitHubUserWrapper(userId);
+  const response = await ghUser.listRepos();
   const allRepos = response.data;
   return name => (allRepos.find(el => el.name === name));
 }

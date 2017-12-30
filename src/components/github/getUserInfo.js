@@ -1,7 +1,7 @@
-import gh from './gitHubApiWrapper';
+import MemoizedGitHubUserWrapper from './MemoizedGitHubUserWrapper';
 
 async function getUserInfo(userId) {
-  const response = await gh.getUser(userId).getProfile();
+  const response = await MemoizedGitHubUserWrapper(userId).getProfile();
   const user = response.data;
   const baseUrl = user.html_url;
   const tabUrl = `${baseUrl}?tab=`;
