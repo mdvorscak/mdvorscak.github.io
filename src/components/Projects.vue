@@ -22,11 +22,11 @@ export default {
         { },
         { }
       ],
-      loading: true //TODO: Skeleton loading
+      loading: true // TODO: Skeleton loading
     };
   },
   created() {
-    getRepoInfoFactory('mdvorscak').then(getRepoInfo => {
+    getRepoInfoFactory('mdvorscak').then((getRepoInfo) => {
       this.repos = [
         getRepoInfo('mdvorscak.github.io'),
         getRepoInfo('validate-params'),

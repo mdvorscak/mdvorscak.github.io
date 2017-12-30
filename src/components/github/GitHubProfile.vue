@@ -24,16 +24,16 @@ import getUserInfo from './getUserInfo';
 
 export default {
   data() {
-    return { 
+    return {
       user: { },
-      loading: true //TODO: skeleton loading
+      loading: true // TODO: skeleton loading
     };
   },
   created() {
-    getUserInfo(this.userId).then(user => {
+    getUserInfo(this.userId).then((user) => {
       this.user = user;
       this.loading = false;
-    });  
+    });
   },
   props: {
     userId: {
@@ -52,6 +52,7 @@ export default {
 }
 .gh-profile-container a{
   color: #333;
+  padding:7px 0;
 }
 .avatar {
   margin: 0 auto;
