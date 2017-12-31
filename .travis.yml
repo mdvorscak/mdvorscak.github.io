@@ -1,0 +1,37 @@
+branches:
+  only:
+    - development
+
+language: node_js
+
+node_js: lts/*
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm install
+
+before_script:
+  - git config --global user.name "Mike Dvorscak"
+  - git config --global user.email "mike.dvorscak@gmail.com"
+  - git clone --branch master https://${GH_REF} dist
+
+script:
+  - npm run lint
+
+after_success:
+  - npm run build
+  - git add favicon.ico
+  - cd dist
+  - cp index.html 404.html
+  - git add --all .
+  - git commit --message "Automatically update from travis-ci"
+  - git push --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
+
+# Note: you should set Environment Variables here or 'Settings' on travis-ci.org
+env:
+  global:
+    - GH_REF: github.com/mdvorscak/mdvorscak.github.io.git
+    # - GH_TOKEN: 'Your GitHub Personal access tokens, via https://github.com/settings/tokens'
