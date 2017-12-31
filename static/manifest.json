@@ -1,0 +1,25 @@
+{
+  "name": "Mike Dvorscak",
+  "short_name": "MD",
+  "description": "Mike Dvorscak's personal site",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fff",
+  "theme_color": "#27ae60",
+  "icons": [{
+    "src": "favicon.ico",
+    "type": "image/png",
+    "sizes": "32x32"
+  },
+  {
+    "src": "splash_512.png",
+    "type": "image/png",
+    "sizes": "512x512"
+  },
+  {
+    "src": "splash_192.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  }]
+}

@@ -1,0 +1,18 @@
+CACHE MANIFEST
+#ver:2017-12-31 21:25:08
+#plugin:4.9.0
+
+CACHE:
+/static/js/vendor.1d0d4f494628863a2372.js
+/static/js/app.2524d383a56d15f4dc19.js
+/static/js/manifest.6c962da98b9757547892.js
+/static/css/app.7bd70b09ed2032fef639abcaa5620b16.css
+/
+/static/home_background.jpg
+/static/manifest.json
+/static/splash_192.png
+/static/splash_512.png
+/static/home_background.jpg
+
+NETWORK:
+*
