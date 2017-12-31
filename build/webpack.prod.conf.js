@@ -10,6 +10,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const OfflinePlugin = require('offline-plugin')
 
 const env = require('../config/prod.env')
 
@@ -141,5 +142,13 @@ if (config.build.bundleAnalyzerReport) {
   const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
   webpackConfig.plugins.push(new BundleAnalyzerPlugin())
 }
+
+// Always put the offline plugin at the end of the pipeline
+webpackConfig.plugins.push(new OfflinePlugin({
+  externals : [
+    '/static/home_background.jpg'
+  ],
+  autoUpdate: true
+}))
 
 module.exports = webpackConfig

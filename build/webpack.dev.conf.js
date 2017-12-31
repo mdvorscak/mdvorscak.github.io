@@ -10,6 +10,7 @@ const portfinder = require('portfinder')
 
 const HOST = process.env.HOST
 const PORT = process.env.PORT && Number(process.env.PORT)
+const OfflinePlugin = require('offline-plugin')
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -72,6 +73,13 @@ module.exports = new Promise((resolve, reject) => {
         onErrors: config.dev.notifyOnErrors
         ? utils.createNotifierCallback()
         : undefined
+      }))
+
+      devWebpackConfig.plugins.push(new OfflinePlugin({
+        externals : [
+          '/static/home_background.jpg'
+        ],
+        autoUpdate: true
       }))
 
       resolve(devWebpackConfig)
