@@ -15,6 +15,7 @@
   "dependencies": {
     "github-api": "^3.0.0",
     "mem": "^3.0.0",
+    "p-is-promise": "^1.1.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
