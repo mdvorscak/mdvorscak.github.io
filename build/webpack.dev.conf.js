@@ -79,7 +79,8 @@ module.exports = new Promise((resolve, reject) => {
         externals : [
           '/static/home_background.jpg'
         ],
-        autoUpdate: true
+        autoUpdate: true,
+        responseStrategy: 'network-first'
       }))
 
       resolve(devWebpackConfig)
