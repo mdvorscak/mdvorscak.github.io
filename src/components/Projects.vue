@@ -12,17 +12,27 @@ import GitHubProfile from './github/GitHubProfile';
 import GitHubRepo from './github/GitHubRepo';
 import getRepoInfoFactory from './github/getRepoInfo';
 
+const loadingNumber = '??';
+
+const loadingRepo = {
+  name: 'Loading...',
+  description: 'Please wait while this repository loads',
+  language: 'Loading...',
+  watchers_count: loadingNumber,
+  stargazers_count: loadingNumber,
+  forks: loadingNumber
+}
+
 export default {
   data() {
     return {
       repos: [
-        { },
-        { },
-        { },
-        { },
-        { }
-      ],
-      loading: true // TODO: Skeleton loading
+        loadingRepo,
+        loadingRepo,
+        loadingRepo,
+        loadingRepo,
+        loadingRepo
+      ]
     };
   },
   created() {
@@ -34,7 +44,6 @@ export default {
         getRepoInfo('metalsmith-browser-sync'),
         getRepoInfo('jasmine-ts-async')
       ];
-      this.loading = false;
     });
   },
   components: {
