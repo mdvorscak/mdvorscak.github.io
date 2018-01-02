@@ -22,17 +22,23 @@
 <script type="text/javascript">
 import getUserInfo from './getUserInfo';
 
+const loadingNumber = '??';
+
 export default {
   data() {
     return {
-      user: { },
-      loading: true // TODO: skeleton loading
+      user: {
+        avatar_url: '/static/user_profile_fallback.png',
+        name: 'Github User',
+        public_repos: loadingNumber,
+        public_gists: loadingNumber,
+        followers: loadingNumber
+      }
     };
   },
   created() {
     getUserInfo(this.userId).then((user) => {
       this.user = user;
-      this.loading = false;
     });
   },
   props: {
@@ -54,7 +60,7 @@ export default {
   color: #333;
   padding:7px 0;
 }
-.avatar {
+.avatar{
   margin: 0 auto;
   display: block;
   border-radius: 50%;
