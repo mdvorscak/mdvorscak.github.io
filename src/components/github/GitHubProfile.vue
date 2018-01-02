@@ -21,8 +21,7 @@
 
 <script type="text/javascript">
 import getUserInfo from './getUserInfo';
-
-const loadingNumber = '??';
+import globals from '../../globals';
 
 export default {
   data() {
@@ -30,9 +29,9 @@ export default {
       user: {
         avatar_url: '/static/user_profile_fallback.png',
         name: 'Github User',
-        public_repos: loadingNumber,
-        public_gists: loadingNumber,
-        followers: loadingNumber
+        public_repos: globals.loadingNumber,
+        public_gists: globals.loadingNumber,
+        followers: globals.loadingNumber
       }
     };
   },

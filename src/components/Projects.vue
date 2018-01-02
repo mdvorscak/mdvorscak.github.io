@@ -11,17 +11,16 @@
 import GitHubProfile from './github/GitHubProfile';
 import GitHubRepo from './github/GitHubRepo';
 import getRepoInfoFactory from './github/getRepoInfo';
-
-const loadingNumber = '??';
+import globals from '../globals';
 
 const loadingRepo = {
-  name: 'Loading...',
+  name: globals.loadingText,
   description: 'Please wait while this repository loads',
-  language: 'Loading...',
-  watchers_count: loadingNumber,
-  stargazers_count: loadingNumber,
-  forks: loadingNumber
-}
+  language: globals.loadingText,
+  watchers_count: globals.loadingNumber,
+  stargazers_count: globals.loadingNumber,
+  forks: globals.loadingNumber
+};
 
 export default {
   data() {
