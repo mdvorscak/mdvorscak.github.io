@@ -69,7 +69,6 @@ export default {
 }
 .repo-content .repo-language {
     font-size: 14px;
-    color: #77818e;
 }
 .repo-stats{
   display: inline-flex;
