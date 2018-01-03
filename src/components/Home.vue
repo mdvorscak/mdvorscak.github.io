@@ -1,6 +1,10 @@
 <template>
     <div class="home image-container">
-        <img src="/static/home_background.jpg" alt="Sunrise New Year's 2017">
+        <img srcset="/static/home_background_512.jpg 512w,
+                /static/home_background.jpg 1028w "
+        sizes="(max-width: 512px) 512px,
+                1028px"
+        src="/static/home_background.jpg" alt="Sunrise New Year's 2017">
         <h3>Hi, I'm Mike. I am a User Experience Architect from Chicago.</h3>
     </div>
 </template>
