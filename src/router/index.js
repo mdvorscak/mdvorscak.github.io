@@ -1,12 +1,13 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import VueAnalytics from 'vue-analytics';
 import Home from '@/components/Home';
 import Resume from '@/components/Resume';
 import Projects from '@/components/Projects';
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -25,3 +26,10 @@ export default new Router({
     }
   ]
 });
+
+Vue.use(VueAnalytics, {
+  id: 'UA-111993704-1',
+  router
+});
+
+export default router;
