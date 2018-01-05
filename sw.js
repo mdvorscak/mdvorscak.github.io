@@ -1,9 +1,9 @@
 var __wpo = {
   "assets": {
     "main": [
-      "/static/js/vendor.1d0d4f494628863a2372.js",
-      "/static/js/app.2bb1cb3edb1673eac89b.js",
-      "/static/js/manifest.27ab6164f0a9a44ad5dd.js",
+      "/static/js/vendor.10b021205149582b0915.js",
+      "/static/js/app.04145022d256aec353bf.js",
+      "/static/js/manifest.5f13901f11ef6aaa375c.js",
       "/static/css/app.e6343b5a7c63359ba22f8df34ffb4845.css",
       "/",
       "/static/home_background_512.jpg",
@@ -21,11 +21,11 @@ var __wpo = {
     "/static/home_background.jpg"
   ],
   "hashesMap": {
-    "7d8b4ace40fe0a8b827c90562ba5464b3b63dc7c": "/static/js/vendor.1d0d4f494628863a2372.js",
-    "82d2de993cf4481679be82f784c5b0ecfc69bb63": "/static/js/app.2bb1cb3edb1673eac89b.js",
-    "4ccbc7e524fd886a53933fafab4dc74f106f9e40": "/static/js/manifest.27ab6164f0a9a44ad5dd.js",
+    "2a5f3e8d4cf015d6ce01300f6c98fe1971725ca0": "/static/js/vendor.10b021205149582b0915.js",
+    "e30e7544ba66e0a0cb3939b1483dff39a6f8bf63": "/static/js/app.04145022d256aec353bf.js",
+    "4140daa97c563bb48f0bc03154e6a3cdacfaea19": "/static/js/manifest.5f13901f11ef6aaa375c.js",
     "52a97f181ba36d07257f3e49fe2468da54d826f1": "/static/css/app.e6343b5a7c63359ba22f8df34ffb4845.css",
-    "cb475a7902405c3dbb703170c389ac48512c0287": "/",
+    "cff590beee6469a2fab3059394e2040bf784ba4a": "/",
     "7c6f574656911facb29abb15e146e4b92c646d75": "/static/home_background_512.jpg",
     "f60f153dc67d4bbc9cb37f15fe24f9ec5ad2721f": "/static/home_background.jpg",
     "d90de3275922e65977180a9ea69d6156cac623a5": "/static/manifest.json",
@@ -35,7 +35,7 @@ var __wpo = {
   },
   "strategy": "changed",
   "responseStrategy": "cache-first",
-  "version": "2018-1-3 03:15:08",
+  "version": "2018-1-5 00:17:07",
   "name": "webpack-offline",
   "pluginVersion": "4.9.0",
   "relativePaths": false
