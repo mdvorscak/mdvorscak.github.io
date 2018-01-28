@@ -28,7 +28,6 @@
 </template>
 
 <script type="text/javascript">
-
 export default {
   props: {
     repo: {
@@ -38,49 +37,42 @@ export default {
   }
 };
 </script>
-<style>
-.repo-item {
-    border-radius: 6px;
-    border: .5px solid #e5e5e5;
-    margin: 11px 0;
-    display: block;
-    text-decoration: none!important;
-    overflow: hidden;
-    color: #5c6877;
-}
-.repo-content {
-    padding: 15px;
-    background-color: #f2f2f2;
-}
-.repo-content .repo-title {
-    font-size: 18px;
-}
-.repo-content .repo-desc, .repo-homepage {
-    font-size: 14px;
-    margin-top: 5px;
-    word-wrap: break-word;
-}
-.text-holder-wrapper {
-    display: block;
-}
-.repo-content .repo-info {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    margin-top: 15px;
-}
-.repo-content .repo-language {
-    font-size: 14px;
-}
-.repo-stats{
-  display: inline-flex;
-}
-.repo-stats p{
-  margin: 0 15px;
-  line-height: normal;
-}
-.repo-item svg{
-  fill: #5c6877;
-}
+<style lang="stylus">
+.repo-item
+  border-radius 6px
+  border 0.5px solid #e5e5e5
+  margin 11px 0
+  display block
+  text-decoration none !important
+  overflow hidden
+  color #5c6877
+
+.repo-content
+  padding 15px
+  background-color #f2f2f2
+  .repo-title
+    font-size 18px
+  .repo-desc, .repo-homepage, .repo-language
+    font-size 14px
+    word-wrap break-word
+  .repo-desc, .repo-homepage
+    margin-top 5px
+  .repo-info
+    display -ms-flexbox
+    display flex
+    -ms-flex-pack justify
+    justify-content space-between
+    margin-top 15px
+
+.text-holder-wrapper
+  display block
+
+.repo-stats
+  display inline-flex
+  p
+    margin 0 15px
+    line-height normal
+
+.repo-item svg
+  fill #5c6877
 </style>
