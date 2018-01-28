@@ -35,14 +35,11 @@ export default {
     };
   },
   created() {
+    const repoList = ['mdvorscak.github.io', 'memoryMatchGame',
+      'metalsmith-browser-sync', 'validate-params',
+      'jasmine-ts-async', 'cloakjs', 'ls-map-wrap'];
     getRepoInfoFactory('mdvorscak').then((getRepoInfo) => {
-      this.repos = [
-        getRepoInfo('mdvorscak.github.io'),
-        getRepoInfo('validate-params'),
-        getRepoInfo('cloakjs'),
-        getRepoInfo('metalsmith-browser-sync'),
-        getRepoInfo('jasmine-ts-async')
-      ];
+      this.repos = repoList.map(repo => getRepoInfo(repo));
     });
   },
   components: {
