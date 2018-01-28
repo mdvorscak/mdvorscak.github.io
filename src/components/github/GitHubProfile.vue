@@ -20,15 +20,15 @@
 </template>
 
 <script type="text/javascript">
-import getUserInfo from "./getUserInfo";
-import globals from "../../globals";
+import getUserInfo from './getUserInfo';
+import globals from '../../globals';
 
 export default {
   data() {
     return {
       user: {
-        avatar_url: "/static/user_profile_fallback.png",
-        name: "Github User",
+        avatar_url: '/static/user_profile_fallback.png',
+        name: 'Github User',
         public_repos: globals.loadingNumber,
         public_gists: globals.loadingNumber,
         followers: globals.loadingNumber
@@ -36,7 +36,7 @@ export default {
     };
   },
   created() {
-    getUserInfo(this.userId).then(user => {
+    getUserInfo(this.userId).then((user) => {
       this.user = user;
     });
   },
