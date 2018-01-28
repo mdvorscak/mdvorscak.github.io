@@ -5,6 +5,9 @@
       <span class="text-holder-wrapper" v-text="repo.name">
       </span>
     </div>
+    <div class="repo-homepage" v-if="repo.homepage">
+      Project site: <a :href="repo.homepage" v-text="repo.homepage"></a>
+    </div>
     <div class="repo-desc">
       <span class="text-holder-wrapper" v-text="repo.description">
       </span>
@@ -52,7 +55,7 @@ export default {
 .repo-content .repo-title {
     font-size: 18px;
 }
-.repo-content .repo-desc {
+.repo-content .repo-desc, .repo-homepage {
     font-size: 14px;
     margin-top: 5px;
     word-wrap: break-word;

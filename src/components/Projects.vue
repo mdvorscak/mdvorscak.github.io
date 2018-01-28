@@ -19,7 +19,8 @@ const loadingRepo = {
   language: globals.loadingText,
   watchers_count: globals.loadingNumber,
   stargazers_count: globals.loadingNumber,
-  forks: globals.loadingNumber
+  forks: globals.loadingNumber,
+  homepage: null
 };
 
 export default {
