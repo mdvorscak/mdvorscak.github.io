@@ -20,15 +20,15 @@
 </template>
 
 <script type="text/javascript">
-import getUserInfo from './getUserInfo';
-import globals from '../../globals';
+import getUserInfo from "./getUserInfo";
+import globals from "../../globals";
 
 export default {
   data() {
     return {
       user: {
-        avatar_url: '/static/user_profile_fallback.png',
-        name: 'Github User',
+        avatar_url: "/static/user_profile_fallback.png",
+        name: "Github User",
         public_repos: globals.loadingNumber,
         public_gists: globals.loadingNumber,
         followers: globals.loadingNumber
@@ -36,7 +36,7 @@ export default {
     };
   },
   created() {
-    getUserInfo(this.userId).then((user) => {
+    getUserInfo(this.userId).then(user => {
       this.user = user;
     });
   },
@@ -48,45 +48,40 @@ export default {
   }
 };
 </script>
-<style>
-.gh-profile-container{
-    background-color: #f2f2f2;
-    border-radius: 0 0 6px 6px;
-    border: .5px solid #e5e5e5;
-    color: #333;
-}
-.gh-profile-container a{
-  color: #333;
-  padding:7px 0;
-}
-.avatar{
-  margin: 0 auto;
-  display: block;
-  border-radius: 50%;
-  max-width: 100%;
-  height: auto;
-  width: auto;
-}
-.gh-user-name{
-  text-align: center;
-}
-.gh-links-container{
-  display: flex;
-  text-align: center;
-}
-.gh-link-container{
-  flex-grow: 1;
-  border: .5px solid #9e9e9e;
-  border-right: 0;
-}
-.gh-link-container:last-child{
-  border-right: .5px solid #9e9e9e;
-  border-bottom-right-radius: 6px;
-}
-.gh-link-container:first-child{
-  border-bottom-left-radius: 6px;
-}
-a.gh-link-container:hover{
-  background-color: #d1d1d1;
-}
+<style lang="stylus">
+.gh-profile-container
+  background-color #f2f2f2
+  border-radius 0 0 6px 6px
+  border 0.5px solid #e5e5e5
+  color #333
+  a
+    color #333
+    padding 7px 0
+
+.avatar
+  margin 0 auto
+  display block
+  border-radius 50%
+  max-width 100%
+  height auto
+  width auto
+
+.gh-user-name
+  text-align center
+
+.gh-links-container
+  display flex
+  text-align center
+
+.gh-link-container
+  flex-grow 1
+  border 0.5px solid #9e9e9e
+  border-right 0
+  &:last-child
+    border-right 0.5px solid #9e9e9e
+    border-bottom-right-radius 6px
+  &:first-child
+    border-bottom-left-radius 6px
+  &:hover
+    background-color #d1d1d1
 </style>
