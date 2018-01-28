@@ -1,7 +1,7 @@
 <template>
   <div>
     <gh-profile user-id="mdvorscak"></gh-profile>
-    <div v-for="repo in repos">
+    <div v-for="(repo, index) in repos" :key="index">
       <gh-repo :repo="repo"></gh-repo>
     </div>
   </div>
