@@ -1,19 +1,58 @@
 <template>
-    <div class="home image-container">
-        <img srcset="/static/home_background_512.jpg 512w,
-                /static/home_background.jpg 1028w "
-        sizes="(max-width: 512px) 512px,
-                1028px"
-        src="/static/home_background.jpg" alt="Sunrise New Year's 2017">
+    <div class="home">
+        <div class="fractal-wrapper">
+          <div v-for="(x, index) in fractalLevels" v-bind:key="index" :class="'fractal item-' + (index + 1)"></div> 
+        </div>
         <h3>Hi, I'm Mike. I am a User Experience Architect from Chicago.</h3>
     </div>
 </template>
 
 <script type="text/javascript">
-export default {};
+
+
+export default {
+  data() {
+    return {
+      fractalLevels: 10
+    };
+  }
+};
 </script>
 <style lang="stylus">
+sqrt(x)
+  return math(x, 'sqrt')
+sq2 = sqrt(2)
+
+random(min, max)
+  return floor( math(0, "random") * max + min )
+randomColorChannel()
+  return random(0, 255)
+randomColor()
+  return rgba(randomColorChannel(), randomColorChannel(), randomColorChannel(), .5)
+
+
+fractal-size = 1000px
+fractalSizing(level) 
+  return fractal-size/(level)
+
+.fractal-wrapper 
+  height 100%
+.fractal
+  position absolute
+  border 1px solid #333
+
+  for i in (1..10)
+    &.item-{i}
+      width w = fractalSizing(i)
+      height h = fractalSizing(i)
+      left 50%
+      top  50%
+      border-radius unit(random(0, 6), '%')
+      transform translateX(-50%) translateY(-50%) rotate(random(0, 360) deg) skew(random(0, 15) deg)
+      background-color randomColor()
 .home 
+  position relative
+  height 100vh
   img
     max-width 100%
     height auto
