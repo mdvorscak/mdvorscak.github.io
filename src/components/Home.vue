@@ -1,6 +1,8 @@
 <template>
     <div class="home">
-        <div v-for="(x, index) in fractalLevels" v-bind:key="index" :class="'fractal item-' + (index + 1)"></div> 
+        <div class="fractal-container">
+          <div v-for="(x, index) in fractalLevels" v-bind:key="index" :class="'fractal item-' + (index + 1)"></div> 
+        </div>
         <h3>Hi, I'm Mike. I am a User Experience Architect from Chicago.</h3>
     </div>
 </template>
@@ -17,10 +19,14 @@ export default {
 };
 </script>
 <style lang="stylus">
+/** Math functions and constants **/
 sqrt(x)
   return math(x, 'sqrt')
-sq2 = sqrt(2)
+naturalSeries(n)
+  return (n * (n + 1))/2
+golden-ratio = (1 + sqrt(5)) / 2
 
+/** Color functions **/
 random(min, max)
   return floor( math(0, "random") * max + min )
 randomColorChannel()
@@ -28,12 +34,14 @@ randomColorChannel()
 randomColor()
   return rgba(randomColorChannel(), randomColorChannel(), randomColorChannel(), .5)
 
-
 body-height = calc(100vh - 60px)
 
-fractal-size = 75vw
+x = 99vw / (naturalSeries(10) * golden-ratio)
+// Need a better formula for sizing inversely using golden ratio
+// the constant 32.15 works best for this scenario, but
+// is not mathematically sound
 fractalSizing(level) 
-  return fractal-size/(level * 3)
+  return 1 / (level + 1) * 32.15 * x 
 
 .fractal
   height body-height
@@ -44,7 +52,7 @@ fractalSizing(level)
 
   for i in (1..10)
     &.item-{i}
-      width w = fractalSizing(i)
+      width fractalSizing(i)
       background-color randomColor()
 .home 
   position relative
