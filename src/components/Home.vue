@@ -1,8 +1,6 @@
 <template>
     <div class="home">
-        <div class="fractal-wrapper">
-          <div v-for="(x, index) in fractalLevels" v-bind:key="index" :class="'fractal item-' + (index + 1)"></div> 
-        </div>
+        <div v-for="(x, index) in fractalLevels" v-bind:key="index" :class="'fractal item-' + (index + 1)"></div> 
         <h3>Hi, I'm Mike. I am a User Experience Architect from Chicago.</h3>
     </div>
 </template>
@@ -31,28 +29,26 @@ randomColor()
   return rgba(randomColorChannel(), randomColorChannel(), randomColorChannel(), .5)
 
 
-fractal-size = 1000px
-fractalSizing(level) 
-  return fractal-size/(level)
+body-height = calc(100vh - 60px)
 
-.fractal-wrapper 
-  height 100%
+fractal-size = 75vw
+fractalSizing(level) 
+  return fractal-size/(level * 3)
+
 .fractal
-  position absolute
-  border 1px solid #333
+  height body-height
+  border-right 1px solid #333
+  display inline-block
+  &:nth-child(1)
+    border-left 1px solid #333
 
   for i in (1..10)
     &.item-{i}
       width w = fractalSizing(i)
-      height h = fractalSizing(i)
-      left 50%
-      top  50%
-      border-radius unit(random(0, 6), '%')
-      transform translateX(-50%) translateY(-50%) rotate(random(0, 360) deg) skew(random(0, 15) deg)
       background-color randomColor()
 .home 
   position relative
-  height 100vh
+  height body-height
   img
     max-width 100%
     height auto
