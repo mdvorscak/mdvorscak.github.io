@@ -36,24 +36,22 @@ randomColor()
 
 body-height = calc(100vh - 60px)
 
-x = 99vw / (naturalSeries(10) * golden-ratio)
-// Need a better formula for sizing inversely using golden ratio
-// the constant 32.15 works best for this scenario, but
-// is not mathematically sound
+x = 100% / (naturalSeries(10) * golden-ratio)
 fractalSizing(level) 
-  return 1 / (level + 1) * 32.15 * x 
+  return (10 - level) * x 
 
+.fractal-container
+  display flex
 .fractal
   height body-height
-  border-right 1px solid #333
-  display inline-block
-  &:nth-child(1)
-    border-left 1px solid #333
+  box-shadow: 4px 0px 11px 0px rgba(0,0,0,.5)
+  display inline-flex
 
   for i in (1..10)
     &.item-{i}
       width fractalSizing(i)
       background-color randomColor()
+      flex-grow 10 - i
 .home 
   position relative
   height body-height
@@ -69,10 +67,11 @@ fractalSizing(level)
     display block
     margin 0 auto
   h3
+    box-shadow: 2vw 2vh 11px 0px rgba(0,0,0,.5);
     position absolute
     bottom 30%
     left 0
-    width 100%
+    width calc(75vw - 22px)
     text-align center
     background white
     padding 11px
