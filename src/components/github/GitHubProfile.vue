@@ -49,13 +49,17 @@ export default {
 };
 </script>
 <style lang="stylus">
+@import '../../common/theme'
+@import 'gh'
+
+dark-border = .5px solid #9e9e9e
 .gh-profile-container
-  background-color #f2f2f2
-  border-radius 0 0 6px 6px
-  border 0.5px solid #e5e5e5
-  color #333
+  background-color theme-light-gray
+  border-radius 0 0 gh-radius gh-radius
+  border gh-border
+  color theme-black
   a
-    color #333
+    color theme-black
     padding 7px 0
 
 .avatar
@@ -75,13 +79,13 @@ export default {
 
 .gh-link-container
   flex-grow 1
-  border 0.5px solid #9e9e9e
+  border dark-border
   border-right 0
   &:last-child
-    border-right 0.5px solid #9e9e9e
-    border-bottom-right-radius 6px
+    border-right dark-border
+    border-bottom-right-radius gh-radius
   &:first-child
-    border-bottom-left-radius 6px
+    border-bottom-left-radius gh-radius
   &:hover
-    background-color #d1d1d1
+    background-color rgba(0, 0, 0, .15)
 </style>

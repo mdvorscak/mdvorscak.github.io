@@ -38,18 +38,24 @@ export default {
 };
 </script>
 <style lang="stylus">
+@import '../../common/theme'
+@import '../../common/sizes'
+@import 'gh'
+
+repo-item-gray = #5c6877
 .repo-item
-  border-radius 6px
-  border 0.5px solid #e5e5e5
-  margin 11px 0
+  border-radius gh-radius
+  border gh-border
+  margin standard-space 0
   display block
-  text-decoration none !important
   overflow hidden
-  color #5c6877
+  color repo-item-gray
+  svg
+    fill repo-item-gray
 
 .repo-content
   padding 15px
-  background-color #f2f2f2
+  background-color theme-light-gray
   .repo-title
     font-size 18px
   .repo-desc, .repo-homepage, .repo-language
@@ -71,8 +77,4 @@ export default {
   display inline-flex
   p
     margin 0 15px
-    line-height normal
-
-.repo-item svg
-  fill #5c6877
 </style>
