@@ -19,14 +19,17 @@ export default {
 </script>
 
 <style lang="stylus">
+@import 'common/sizes'
+@import 'common/theme'
+
 #content
   margin 0 auto
-  width 75vw
+  width content-width
 
 html
   font-family 'Roboto', 'Droid Sans', 'Open Sans', sans-serif
   font-weight normal
-  color rgba(0, 0, 0, 0.87)
+  color theme-black
 
 body
   margin 0
