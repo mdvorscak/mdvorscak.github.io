@@ -19,14 +19,14 @@ export default {
 };
 </script>
 <style lang="stylus">
-@media only screen and (min-width: 601px)
-  .navbar-fixed
-    height 64px
-    line-height 64px
+@import '../common/theme'
+@import '../common/sizes'
+@import '../common/breakpoints'
 
+nav-height = 56px
 .navbar-fixed
   position relative
-  height 56px
+  height nav-height
   z-index 997
   nav
     position fixed
@@ -34,16 +34,16 @@ export default {
 nav
   color #FFF
   width 100%
-  background-color #27ae60
-  height 56px
-  line-height 56px
-  box-shadow 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2)
+  background-color theme-green
+  height nav-height
+  line-height nav-height
+  box-shadow 0 2px 2px 0 rgba(0, 0, 0, 0.14) , 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2)
   display block
 
 .nav-wrapper
   margin 0 auto
   display block
-  width 75vw
+  width content-width
   ul
     display inline-flex
     height 100%
@@ -53,14 +53,11 @@ nav
     margin 0
     li
       list-style-type none
-      -webkit-transition background-color 0.3s
       transition background-color 0.3s
       float left
       padding 0
     a
-      -webkit-transition background-color 0.3s
       transition background-color 0.3s
-      font-size 1rem
       color #fff
       display block
       padding 0 15px
@@ -69,11 +66,11 @@ nav
       &:hover
         background-color rgba(0, 0, 0, 0.1)
   
-@media (min-width: 600px)
+@media (min-width: ipad-width)
   .nav-wrapper ul a
-    font-size 18px /* 600 * 3vw (600 * .03) */
+    font-size ipad-width * .03 
 
-@media (max-width: 405px)
+@media (max-width: phone-width)
   .nav-wrapper ul a
     font-size 2.4vw
 </style>
