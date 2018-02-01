@@ -50,6 +50,7 @@ export default {
 </script>
 <style lang="stylus">
 @import '../../common/theme'
+@import '../../common/mixins'
 @import 'gh'
 
 dark-border = .5px solid #9e9e9e
@@ -81,11 +82,10 @@ dark-border = .5px solid #9e9e9e
   flex-grow 1
   border dark-border
   border-right 0
+  hover-effect()
   &:last-child
     border-right dark-border
     border-bottom-right-radius gh-radius
   &:first-child
     border-bottom-left-radius gh-radius
-  &:hover
-    background-color rgba(0, 0, 0, .15)
 </style>

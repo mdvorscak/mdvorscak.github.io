@@ -22,6 +22,7 @@ export default {
 @import '../common/theme'
 @import '../common/sizes'
 @import '../common/breakpoints'
+@import '../common/mixins'
 
 nav-height = 56px
 .navbar-fixed
@@ -53,18 +54,15 @@ nav
     margin 0
     li
       list-style-type none
-      transition background-color 0.3s
       float left
       padding 0
     a
-      transition background-color 0.3s
+      hover-effect()
       color #fff
       display block
       padding 0 15px
       cursor pointer
       font-size 3vw
-      &:hover
-        background-color rgba(0, 0, 0, 0.1)
   
 @media (min-width: ipad-width)
   .nav-wrapper ul a
