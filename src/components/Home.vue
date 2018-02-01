@@ -19,23 +19,14 @@ export default {
 };
 </script>
 <style lang="stylus">
-/** Math functions and constants **/
-sqrt(x)
-  return math(x, 'sqrt')
-naturalSeries(n)
-  return (n * (n + 1))/2
-golden-ratio = (1 + sqrt(5)) / 2
-
-/** Color functions **/
-random(min, max)
-  return floor( math(0, "random") * max + min )
-randomColorChannel()
-  return random(0, 255)
-randomColor()
-  return rgba(randomColorChannel(), randomColorChannel(), randomColorChannel(), .5)
+@import '../common/math'
+@import '../common/color-functions'
+@import '../common/sizes'
+@import '../common/breakpoints'
 
 body-height = calc(100vh - 60px)
 
+/** Since the fractals use flex, the size will be relative **/
 x = 100% / (naturalSeries(10) * golden-ratio)
 fractalSizing(level) 
   return (10 - level) * x 
@@ -51,33 +42,22 @@ fractalSizing(level)
     &.item-{i}
       width fractalSizing(i)
       background-color randomColor()
+      /** The first item should be the largest **/
       flex-grow 10 - i
 .home 
   position relative
-  height body-height
-  img
-    max-width 100%
-    height auto
-    width auto
-    display block
-    margin 0 auto
-  &.image-container
-    position relative
-    width 100%
-    display block
-    margin 0 auto
   h3
     box-shadow: 2vw 2vh 11px 0px rgba(0,0,0,.5);
     position absolute
     bottom 30%
     left 0
-    width calc(75vw - 22px)
+    width 100%
     text-align center
-    background white
-    padding 11px
+    background #FFF
+    padding standard-space 0
     font-size 3vw
 
-@media (min-width: 1400px)
+@media (min-width: extra-large-width)
   .home h3
-    font-size 42px /* 1400 * 3vw (1400 * .03) */
+    font-size extra-large-width * .03
 </style>

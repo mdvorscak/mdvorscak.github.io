@@ -1,0 +1,7 @@
+/** Color functions **/
+random(min, max)
+  return floor( math(0, "random") * max + min )
+randomColorChannel()
+  return random(0, 255)
+randomColor()
+  return rgba(randomColorChannel(), randomColorChannel(), randomColorChannel(), .5)
