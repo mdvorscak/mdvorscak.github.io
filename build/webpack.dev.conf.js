@@ -76,9 +76,6 @@ module.exports = new Promise((resolve, reject) => {
       }))
 
       devWebpackConfig.plugins.push(new OfflinePlugin({
-        externals : [
-          '/static/home_background.jpg'
-        ],
         autoUpdate: true,
         responseStrategy: 'network-first'
       }))

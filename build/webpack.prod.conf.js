@@ -145,9 +145,6 @@ if (config.build.bundleAnalyzerReport) {
 
 // Always put the offline plugin at the end of the pipeline
 webpackConfig.plugins.push(new OfflinePlugin({
-  externals : [
-    '/static/home_background.jpg'
-  ],
   autoUpdate: true
 }))
 
