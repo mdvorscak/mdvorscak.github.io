@@ -1,12 +1,16 @@
 <template lang="pug">
-  div.navbar-fixed
-    nav
-      div.nav-wrapper
-        ul
-          li: router-link(to="/") Home
-          li: router-link(to="/resume") Resume
-          li: router-link(to="/projects") Projects
-          li: a(href="mailto:mike.dvorscak@gmail.com") Contact Me
+mixin nav-route-link(path, name)
+  li: router-link(to!= path)= name
+mixin nav-link(href, name)
+  li: a(href!= href)= name
+div.navbar-fixed
+  nav
+    div.nav-wrapper
+      ul
+        +nav-route-link("/", "Home")
+        +nav-route-link("/resume", "Resume")
+        +nav-route-link("/projects", "Projects")
+        +nav-link("mailto:mike.dvorscak@gmail.com", "Contact Me")
 </template>
 
 <script type="text/javascript">
