@@ -35,10 +35,9 @@ export default {
       }
     };
   },
-  created() {
-    getUserInfo(this.userId).then((user) => {
-      this.user = user;
-    });
+  async created() {
+    const user = await getUserInfo(this.userId);
+    this.user = user;
   },
   props: {
     userId: {

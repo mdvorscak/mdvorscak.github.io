@@ -35,13 +35,12 @@ export default {
       ]
     };
   },
-  created() {
+  async created() {
     const repoList = ['mdvorscak.github.io', 'memoryMatchGame',
       'metalsmith-browser-sync', 'validate-params',
       'jasmine-ts-async', 'cloakjs', 'ls-map-wrap'];
-    getRepoInfoFactory('mdvorscak').then((getRepoInfo) => {
-      this.repos = repoList.map(repo => getRepoInfo(repo));
-    });
+    const getRepoInfo = await getRepoInfoFactory('mdvorscak');
+    this.repos = repoList.map(repo => getRepoInfo(repo));
   },
   components: {
     'gh-profile': GitHubProfile,
