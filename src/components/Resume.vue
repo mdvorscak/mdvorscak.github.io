@@ -5,7 +5,7 @@
 <script type="text/javascript">
   const HEIGHT_DIFFERENCE = 6;
   export default {
-    mounted: function mounted() {
+    mounted() {
       this.$nextTick(() => {
         $('iframe').height(window.innerHeight - $('.navbar-fixed').height() - HEIGHT_DIFFERENCE);
       });
