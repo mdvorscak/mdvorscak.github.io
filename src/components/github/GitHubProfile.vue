@@ -1,17 +1,15 @@
 <template lang="pug">
-  div.gh-profile-container
-    img.avatar(:src="user.avatar_url" alt="profile picture")
-    h3.gh-user-name(v-text="user.name")
-    div.gh-links-container
-      a.gh-link-container(:href="user.repos_url")
-        div(v-text="user.public_repos")
-        div.gh-link-descriptor Repositories
-      a.gh-link-container(:href="user.gists_url")
-        div(v-text="user.public_gists")
-        div.gh-link-descriptor Gists
-      a.gh-link-container(:href="user.followers_url")
-        div(v-text="user.followers")
-        div.gh-link-descriptor Followers
+mixin link(text)
+  a.gh-link-container(:href!= attributes.href) 
+    div(v-text!= attributes.number)
+    div.gh-link-descriptor= text
+div.gh-profile-container
+  img.avatar(:src="user.avatar_url" alt="profile picture")
+  h3.gh-user-name(v-text="user.name")
+  div.gh-links-container
+    +link('Repositories')(href="user.repos_url" number="user.public_repos")
+    +link('Gists')(href="user.gists_url" number="user.public_gists")
+    +link('Followers')(href="user.followers_url" number="user.followers")
 </template>
 
 <script type="text/javascript">
