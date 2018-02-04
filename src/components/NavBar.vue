@@ -1,16 +1,12 @@
-<template>
-<div class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper">
-        <ul>
-          <li><router-link to="/">Home</router-link></li>
-          <li><router-link to="/resume">Resume</router-link></li>
-          <li><router-link to="/projects">Projects</router-link></li>
-          <li><a href="mailto:mike.dvorscak@gmail.com">Contact Me</a></li>
-        </ul>
-      </div>
-    </nav>
-  </div>
+<template lang="pug">
+  div.navbar-fixed
+    nav
+      div.nav-wrapper
+        ul
+          li: router-link(to="/") Home
+          li: router-link(to="/resume") Resume
+          li: router-link(to="/projects") Projects
+          li: a(href="mailto:mike.dvorscak@gmail.com") Contact Me
 </template>
 
 <script type="text/javascript">

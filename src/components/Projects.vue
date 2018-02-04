@@ -1,10 +1,8 @@
-<template>
-  <div>
-    <gh-profile user-id="mdvorscak"></gh-profile>
-    <div v-for="(repo, index) in repos" :key="index">
-      <gh-repo :repo="repo"></gh-repo>
-    </div>
-  </div>
+<template lang="pug">
+  div
+    gh-profile(user-id="mdvorscak")
+    div(v-for="(repo, index) in repos" :key="index")
+      gh-repo(:repo="repo")
 </template>
 
 <script type="text/javascript">
