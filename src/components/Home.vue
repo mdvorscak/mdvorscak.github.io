@@ -22,8 +22,6 @@ export default {
 @import '../common/sizes'
 @import '../common/breakpoints'
 
-body-height = calc(100vh - 60px)
-
 /** Since the fractals use flex, the size will be relative **/
 x = 100% / (naturalSeries(10) * golden-ratio)
 fractalSizing(level) 

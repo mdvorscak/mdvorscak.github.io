@@ -3,14 +3,9 @@
 </template>
 
 <script type="text/javascript">
-  const HEIGHT_DIFFERENCE = 6;
-  export default {
-    mounted() {
-      this.$nextTick(() => {
-        $('iframe').height(window.innerHeight - $('.navbar-fixed').height() - HEIGHT_DIFFERENCE);
-      });
-    }
-  };
 </script>
-<style>
+<style lang="stylus">
+@import '../common/sizes'
+iframe 
+  height body-height
 </style>
