@@ -23,7 +23,6 @@ script:
 
 after_success:
   - npm run build
-  - git add favicon.ico
   - cd dist
   - cp index.html 404.html
   - git add --all .
