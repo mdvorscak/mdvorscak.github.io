@@ -1,15 +1,15 @@
 <template lang="pug">
-  div
-    gh-profile(user-id="mdvorscak")
-    div(v-for="(repo, index) in repos" :key="index")
-      gh-repo(:repo="repo")
+div
+  gh-profile(user-id="mdvorscak")
+  div(v-for="(repo, index) in repos" :key="index")
+    gh-repo(:repo="repo")
 </template>
 
 <script type="text/javascript">
-import GitHubProfile from './github/GitHubProfile';
-import GitHubRepo from './github/GitHubRepo';
-import getRepoInfoFactory from './github/getRepoInfo';
-import globals from '../globals';
+import GitHubProfile from './github/GitHubProfile.vue';
+import GitHubRepo from './github/GitHubRepo.vue';
+import getRepoInfoFactory from './github/getRepoInfo.js';
+import globals from '../globals.js';
 
 const loadingRepo = {
   name: globals.loadingText,

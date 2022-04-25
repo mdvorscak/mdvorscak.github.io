@@ -1,13 +1,13 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-import VueAnalytics from 'vue-analytics';
-import Home from '@/components/Home';
-import Resume from '@/components/Resume';
-import Projects from '@/components/Projects';
+// import Vue from 'vue';
+import { createRouter, createWebHistory } from 'vue-router';
+// import VueAnalytics from 'vue-analytics';
+import Home from '@/components/Home.vue';
+import Resume from '@/components/Resume.vue';
+import Projects from '@/components/Projects.vue';
 
-Vue.use(Router);
 
-const router = new Router({
+const router = createRouter({
+  history: createWebHistory(),
   routes: [
     {
       path: '/',
@@ -27,9 +27,9 @@ const router = new Router({
   ]
 });
 
-Vue.use(VueAnalytics, {
-  id: 'UA-111993704-1',
-  router
-});
+// Vue.use(VueAnalytics, {
+//   id: 'UA-111993704-1',
+//   router
+// });
 
 export default router;

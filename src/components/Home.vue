@@ -1,8 +1,8 @@
 <template lang="pug">
-  div.home
-    div.fractal-container
-      div(v-for="(x, index) in fractalLevels" :key="index" :class="'fractal item-' + (index + 1)")
-      h3 Hi, I'm Mike. I am a User Experience Architect from Chicago.
+div.home
+  div.fractal-container
+    div(v-for="(x, index) in fractalLevels" :key="index" :class="'fractal item-' + (index + 1)")
+    h3 Hi, I'm Mike. I am a User Experience Architect from Chicago.
 </template>
 
 <script type="text/javascript">

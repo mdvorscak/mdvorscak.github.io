@@ -1,12 +1,12 @@
 <template lang="pug">
-  div#app
-    navBar
-    div#content
-      router-view
+div#app
+  navBar
+  div#content
+    router-view
 </template>
 
 <script>
-import navBar from './components/NavBar';
+import navBar from './components/NavBar.vue';
 
 export default {
   name: 'app',
