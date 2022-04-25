@@ -17,7 +17,6 @@
     "github-api": "^3.0.0",
     "ls-map-wrap": "1.0.1",
     "mem": "^3.0.0",
-    "p-is-promise": "^1.1.0",
     "vue": "^3.2.33",
     "vue-analytics": "^5.8.0",
     "vue-router": "^4.0.14"
