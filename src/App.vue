@@ -9,7 +9,7 @@ div#app
 import navBar from './components/NavBar.vue';
 
 export default {
-  name: 'app',
+  name: 'App',
   components: {
     navBar
   }

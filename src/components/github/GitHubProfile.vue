@@ -18,6 +18,12 @@ import globals from '../../globals';
 import avatarFallback from '@/../static/user_profile_fallback.png';
 
 export default {
+  props: {
+    userId: {
+      type: String,
+      required: true
+    }
+  },
   data() {
     return {
       user: {
@@ -32,12 +38,6 @@ export default {
   async created() {
     const user = await getUserInfo(this.userId);
     this.user = user;
-  },
-  props: {
-    userId: {
-      type: String,
-      required: true
-    }
   }
 };
 </script>

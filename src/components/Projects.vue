@@ -22,6 +22,10 @@ const loadingRepo = {
 };
 
 export default {
+  components: {
+    'gh-profile': GitHubProfile,
+    'gh-repo': GitHubRepo
+  },
   data() {
     return {
       repos: [
@@ -39,10 +43,6 @@ export default {
       'jasmine-ts-async', 'cloakjs', 'ls-map-wrap'];
     const getRepoInfo = await getRepoInfoFactory('mdvorscak');
     this.repos = repoList.map(repo => getRepoInfo(repo));
-  },
-  components: {
-    'gh-profile': GitHubProfile,
-    'gh-repo': GitHubRepo
   }
 };
 </script>

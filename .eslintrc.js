@@ -1,38 +1,18 @@
 // https://eslint.org/docs/user-guide/configuring
 
 module.exports = {
-  root: true,
-  parser: 'babel-eslint',
-  parserOptions: {
-    sourceType: 'module'
-  },
   env: {
-    browser: true,
+    node: true,
   },
-  extends: 'airbnb-base',
-  // required to lint *.vue files
-  plugins: [
-    'html'
+  extends: [
+    'eslint:recommended',
+    'plugin:vue/vue3-recommended',
   ],
-  // add your custom rules here
   rules: {
-    'linebreak-style' : 0,
-    // disallow reassignment of function parameters
-    // disallow parameter object manipulation except for specific exclusions
-    'no-param-reassign': ['error', {
-      props: true,
-      ignorePropertyModificationsFor: [
-        'state', // for vuex state
-        'acc', // for reduce accumulators
-        'e' // for e.returnvalue
-      ]
-    }],
-    // allow optionalDependencies
-    'import/no-extraneous-dependencies': ['error', {
-      optionalDependencies: ['test/unit/index.js']
-    }],
-    // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'comma-dangle': ["error", "never"]
+    'vue/no-unused-vars': 'error',
+    // This rule enforces multi-word component names (see https://eslint.vuejs.org/rules/multi-word-component-names.html)
+    // This would mean that Projects/Resume would error
+    // For now, I'll ignore this, if standard html tags come for these items I'll revist this
+    'vue/multi-word-component-names': 'off'
   }
 }

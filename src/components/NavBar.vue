@@ -15,7 +15,7 @@ div.navbar-fixed
 
 <script type="text/javascript">
 export default {
-  name: 'navBar'
+  name: 'NavBar'
 };
 </script>
 <style lang="stylus">
