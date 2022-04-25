@@ -15,12 +15,13 @@ div.gh-profile-container
 <script type="text/javascript">
 import getUserInfo from './getUserInfo';
 import globals from '../../globals';
+import avatarFallback from '@/../static/user_profile_fallback.png';
 
 export default {
   data() {
     return {
       user: {
-        avatar_url: '/static/user_profile_fallback.png',
+        avatar_url: avatarFallback,
         name: 'Github User',
         public_repos: globals.loadingNumber,
         public_gists: globals.loadingNumber,
